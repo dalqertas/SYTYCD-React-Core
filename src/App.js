@@ -17,16 +17,18 @@ class App extends Component {
   state = {
     authors: null,
     books: [],
-    loading: false
+    loading: true
   };
 
   fetchAllAuthors = async () => {
-    const res = await instance.put("/api/authors/");
+    const res = await instance.get("/api/authors/");
+    console.log(res.data)
     return res.data;
+    
   };
 
   fetchAllBooks = async () => {
-    const res = await instance.get("/-api/books/");
+    const res = await instance.get("/api/books/");
     return res.data;
   };
 
