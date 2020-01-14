@@ -22,7 +22,6 @@ class App extends Component {
 
   fetchAllAuthors = async () => {
     const res = await instance.get("/api/authors/");
-    console.log(res.data)
     return res.data;
     
   };
